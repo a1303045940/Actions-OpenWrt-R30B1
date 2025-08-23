@@ -21,3 +21,9 @@
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
 sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
+## 切换到24.10
+sed -i \
+  -e 's|^#src-git qmodem https://github.com/FUjr/modem_feeds.git|src-git qmodem https://github.com/FUjr/modem_feeds.git|' \
+  -e 's|^#src-git luci https://github.com/coolsnowwolf/luci.git;openwrt-24.10|src-git luci https://github.com/coolsnowwolf/luci.git;openwrt-24.10|' \
+  -e 's|^src-git luci https://github.com/coolsnowwolf/luci.git;openwrt-23.05|#src-git luci https://github.com/coolsnowwolf/luci.git;openwrt-23.05|' \
+  feeds.conf.default
