@@ -5,7 +5,7 @@
 
 / {
 	model = "CLT R30B1";
-	compatible = "clt,r30b1-112m", "mediatek,mt7981";
+	compatible = "clt,r30b1-112M", "mediatek,mt7981";
 
 	aliases {
 		label-mac-device = &gmac1;
