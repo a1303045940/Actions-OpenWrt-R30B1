@@ -11,7 +11,7 @@ mediatek_setup_interfaces()
 	abt,asr3000|\
 	cmcc,rax3000m*|\
 	cmcc,xr30-nand|\
-  clt,r30b1-112m|\
+  clt,r30b1-112M|\
 	cmcc,xr30-emmc|\
 	h3c,magic-nx30-pro|\
 	imou,lc-hx3001|\
