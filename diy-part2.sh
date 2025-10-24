@@ -116,7 +116,7 @@ RemoveDirWithoutRex() {
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
 
-AddPackage ddns-go sirpdboy luci-app-ddns-go main
+#AddPackage ddns-go sirpdboy luci-app-ddns-go main
 AddPackage other sirpdboy luci-app-advancedplus main
 AddPackage other sirpdboy luci-app-lucky main
 AddPackage other sbwml luci-app-mosdns v5
@@ -125,5 +125,5 @@ AddPackage passwall xiaorouji openwrt-passwall main
 AddPackage passwall xiaorouji openwrt-passwall2 main
 AddPackage passwall xiaorouji openwrt-passwall-packages main
 AddPackage OpenClash vernesong OpenClash dev
-AddPackage OpenWrt-nikki nikkinikki-org OpenWrt-nikki main
-AddPackage other sbwml luci-app-openlist2 main
+#AddPackage OpenWrt-nikki nikkinikki-org OpenWrt-nikki main
+#AddPackage other sbwml luci-app-openlist2 main
