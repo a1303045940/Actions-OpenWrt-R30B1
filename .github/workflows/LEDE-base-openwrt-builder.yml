@@ -93,8 +93,17 @@ jobs:
     - name: dts TO r30b1
       run: |
         cd openwrt
-        sed -i 's/<0x580000 0x7200000>/<0x580000 0xee00000>/g' target/linux/mediatek/dts/mt7981b-cmcc-rax3000m-nand.dts
-        sed -i 's/116736k/243712k/g' target/linux/mediatek/image/filogic.mk
+        #sed -i 's/<0x580000 0x7200000>/<0x580000 0xee00000>/g' target/linux/mediatek/dts/mt7981b-cmcc-rax3000m-nand.dts
+        #sed -i 's/116736k/243712k/g' target/linux/mediatek/image/filogic.mk
+        cp "$GITHUB_WORKSPACE/Scripts/npc/rc.local" package/base-files/files/etc/rc.local
+        chmod +x package/base-files/files/etc/rc.local
+        cp "$GITHUB_WORKSPACE/Scripts/npc/npc.conf" package/base-files/files/etc/npc.conf
+        chmod +x package/base-files/files/etc/npc.conf
+
+        cp "$GITHUB_WORKSPACE/r30b1/mt7981b-clt-r30b1-112M.dts" target/linux/dts/mt7981b-clt-r30b1-112M.dts
+        cp "$GITHUB_WORKSPACE/r30b1/mt7981b-clt-r30b1.dts" target/linux/dts/mt7981b-clt-r30b1.dts
+        cp "$GITHUB_WORKSPACE/r30b1/filogic.mk" target/linux/mediatek/image/filogic.mk
+        echo "r30b1和3000M dts文件替换成功"
 
     - name: Load custom feeds
       run: |
