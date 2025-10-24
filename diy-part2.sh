@@ -117,7 +117,7 @@ RemoveDirWithoutRex() {
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
 
 #AddPackage ddns-go sirpdboy luci-app-ddns-go main
-AddPackage other sirpdboy luci-app-advancedplus main
+#AddPackage other sirpdboy luci-app-advancedplus main
 AddPackage other sirpdboy luci-app-lucky main
 AddPackage other sbwml luci-app-mosdns v5
 AddPackage themes sirpdboy luci-theme-kucat js
