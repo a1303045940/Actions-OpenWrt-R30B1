@@ -90,7 +90,7 @@ jobs:
         cd openwrt
         git submodule update --init --recursive
 
-    - name: REPLACE TO 256M
+    - name: dts TO r30b1
       run: |
         cd openwrt
         sed -i 's/<0x580000 0x7200000>/<0x580000 0xee00000>/g' target/linux/mediatek/dts/mt7981b-cmcc-rax3000m-nand.dts
