@@ -350,10 +350,10 @@ define Device/cmcc_rax3000m-nand
 endef
 TARGET_DEVICES += cmcc_rax3000m-nand
 
-define Device/clt_r30b1-112m
+define Device/clt_r30b1-112M
   DEVICE_VENDOR := CLT
   DEVICE_MODEL := R30B1
-  DEVICE_DTS := mt7981b-clt-r30b1-112m
+  DEVICE_DTS := mt7981b-clt-r30b1-112M
   DEVICE_DTS_DIR := ../dts
   DEVICE_PACKAGES := kmod-mt7981-firmware mt7981-wo-firmware
   UBINIZE_OPTS := -E 5
