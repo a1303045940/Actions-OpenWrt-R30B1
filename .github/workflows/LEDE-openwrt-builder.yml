@@ -112,6 +112,17 @@ jobs:
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
+        
+    - name: Install FUSE dev headers
+      if: runner.os == 'Linux'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y --no-install-recommends \
+          build-essential \
+          pkg-config \
+          libfuse-dev \
+          libfuse3-dev
+        sudo apt-get clean
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
