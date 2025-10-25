@@ -131,7 +131,35 @@ jobs:
         chmod +x patch-file.sh
         cd openwrt
         $GITHUB_WORKSPACE/patch-file.sh
+        
+    - name: Disable problematic package fullconenat-nft
+      run: |
+        echo "Removing package/network/services/fullconenat-nft to avoid build-time ABI mismatch"
+        rm -rf ./openwrt/package/network/services/fullconenat-nft || true
+        # 可选：确认已删除
+        ls -la ./openwrt/package/network/services || true
+        
+    - name: Apply source patch for fullconenat-nft
+      run: |
+        cat > fix-fullconenat-validate.patch <<'PATCH'
+        --- a/package/network/services/fullconenat-nft/src/nft_ext_fullcone.c
+        +++ b/package/network/services/fullconenat-nft/src/nft_ext_fullcone.c
+        @@
+        -int nft_fullcone_validate(const struct nft_ctx *ctx)
+        -{
+        -    /* 旧实现 */
+        -}
+        +int nft_fullcone_validate(const struct nft_ctx *ctx, const struct nft_expr *expr, const struct nlattr * const tb[])
+        +    {
+        +        (void)expr;
+        +        (void)tb;
+        +        /* 旧实现调整后放这里 */
+        +    }
+            PATCH
+        git apply fix-fullconenat-validate.patch || { echo "patch failed"; exit 1; }
 
+
+    
     - name: Download package
       id: package
       run: |
