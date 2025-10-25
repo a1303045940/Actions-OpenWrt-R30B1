@@ -369,7 +369,7 @@ define Device/clt_r30b1-112M
   KERNEL_INITRAMFS = kernel-bin | lzma | \
 	fit lzma $$(KDIR)/image-$$(firstword $$(DEVICE_DTS)).dtb with-initrd
 endef
-TARGET_DEVICES += clt_r30b1-112m
+TARGET_DEVICES += clt_r30b1-112M
 
 define Device/cmcc_xr30-emmc
   DEVICE_VENDOR := CMCC
