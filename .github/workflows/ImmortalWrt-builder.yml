@@ -93,8 +93,8 @@ jobs:
     - name: REPLACE TO 256M
       run: |
         cd openwrt
-        sed -i 's/<0x580000 0x7200000>/<0x580000 0xee00000>/g' target/linux/mediatek/dts/mt7981b-cmcc-rax3000m-nand.dtso
-        sed -i 's/<0x580000 0x7200000>/<0x580000 0xee00000>/g' package/boot/uboot-mediatek/patches/437-add-cmcc_rax3000m.patch
+        #sed -i 's/<0x580000 0x7200000>/<0x580000 0xee00000>/g' target/linux/mediatek/dts/mt7981b-cmcc-rax3000m-nand.dtso
+        #sed -i 's/<0x580000 0x7200000>/<0x580000 0xee00000>/g' package/boot/uboot-mediatek/patches/437-add-cmcc_rax3000m.patch
 
     - name: Load custom feeds
       run: |
