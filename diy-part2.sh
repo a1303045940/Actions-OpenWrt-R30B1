@@ -120,8 +120,8 @@ RemoveDirWithoutRex() {
 #AddPackage other sirpdboy luci-app-advancedplus main
 AddPackage other sirpdboy luci-app-lucky main
 AddPackage other sbwml luci-app-mosdns v5
-AddPackage themes sirpdboy luci-theme-kucat js
-AddPackage passwall xiaorouji openwrt-passwall main
+#AddPackage themes sirpdboy luci-theme-kucat js
+#AddPackage passwall xiaorouji openwrt-passwall main
 AddPackage passwall xiaorouji openwrt-passwall2 main
 AddPackage passwall xiaorouji openwrt-passwall-packages main
 AddPackage OpenClash vernesong OpenClash dev
